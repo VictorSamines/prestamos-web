@@ -8,7 +8,7 @@ app.set('view engine', 'ejs')
 // specify the views directory
 app.set('views', __dirname + '/views')
 
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 //middleware -> express.json()
 // Sirve para trabajar con solicitudes put o post
 // porque en ambas solicitudes está enviando datos (en forma de algún objeto de datos)
@@ -19,6 +19,10 @@ app.use(express.static('public'))
 app.get("/", (req, res) => {
   res.render("index", { titulo: 'EJS jefferson'})
 });
+
+app.get('/help', (req, res) => {
+  res.render("help", { titulo: 'Ayuda acerca del préstamo' })
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
