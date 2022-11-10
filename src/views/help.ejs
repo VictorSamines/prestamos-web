@@ -4,15 +4,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style/help.css">
   <link rel="stylesheet" href="/style/info.css">
-  <title><%= titulo %></title>
+  <title>
+    <%= titulo %>
+  </title>
 </head>
 <body>
-  <main class="help">
-    <div class="wrapper">
-      <h1>Ejemplo de utilización de la Herramienta</h1>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/mANgYL1wO2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </main>
+  <%- include("template/header") %>
+    <main class="help">
+      <div class="wrapper">
+        <div class="help-grid">
+          <div class="help-video">
+            <h1>Ejemplo de utilización de la Herramienta</h1>
+            <iframe width="800" height="450" src="https://www.youtube.com/embed/mANgYL1wO2A" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+  
+          <article class="help-bottom-faqs">
+            <h2>Pasos</h2>
+            <ol>
+              <li>Click en el botón registra cálculo</li>
+              <li>Ingresar el plazo en años del préstamo</li>
+              <li>Elegir una tasa de interés disponible</li>
+              <li>Click en el botón calcular</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <section class="help-bottom">
+      <div class="wrapper">
+        <article class="help-bottom-right">
+          <h3>Preguntas Frecuentes</h3>
+
+          <p class="accordion">Q1. What currency is the course charged in?</p>
+          <div class="panel">A. The course is charged in Australian dollars.</div>
+
+          <p class="accordion">Q2. What if the course doesn’t help me?</p>
+          <div class="panel">A. If it doesn't help you I'll refund the purchase price in full.</div>
+
+          <p class="accordion">Q3. When will the webinars take place?</p>
+          <div class="panel">A. Depending on the mix of countries and time zones for people attending the webinars, I
+            will pick a time that works best for most participants. All webinars will be recorded so you can listen to
+            them again. The private Facebook group will obviously be available 24/7 and I’ll be monitoring and
+            contributing to the discussion regularly.</div>
+
+          <p class="accordion">Q4. What is the self-directed mentoring program?</p>
+          <div class="panel">A. The self-directed mentoring program is designed to help you set-up and run an effective
+            mentee-mentor relationship as part of the course.</div>
+        </article>
+      </div>
+    </section>
+    
+    <%- include("template/footer") %>
+    <script src="./js/helpFaqs.js"></script>
 </body>
 </html>

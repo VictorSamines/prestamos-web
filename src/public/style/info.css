@@ -88,15 +88,17 @@ main .main-content {
 
 .main-left-content a {
   padding: 1em;
-  background: var(--blue);
-  /* color: black; */
-  color: white;
-  border: 1px solid var(--black);
+  background-color: transparent;
+  border: 1px solid var(--blue);
+  color: var(--blue);
   border-radius: 1em;
+  font-weight: bold;
 }
 
 .main-left-content a:hover {
   background-color: var(--black);
+  background: var(--blue);
+  color: white;
 }
 
 /* section about */
@@ -139,4 +141,52 @@ main .main-content {
   font-weight: 600;
   font-size: 1.05em;
   
+}
+
+/* footer */
+.footer {
+  background: var(--black);
+  color: white;
+  padding: 2em 0;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.footer-grid {
+  display: grid;
+  grid-column-gap: 7em;
+  grid-template-columns: 200px 1fr 400px;
+  grid-template-areas:
+    "logo links button"
+    "logo links copyright";
+}
+
+.footer__logo {
+  border: 1px solid green;
+  grid-area: logo;
+  margin: initial;
+}
+
+.footer__links {
+  /* border: 1px solid red; */
+  grid-area: links;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: start;
+}
+
+.footer__social {
+  display: grid;
+  grid-template-columns: repeat(5, 25px);
+  grid-column-gap: 1em;
+  justify-content: center;
+  margin: 2.5em 0;
+  grid-area: social;
+}
+
+.footer__copyright {
+  color: var(--grayBlue);
+  padding-top: 2.5em;
+  grid-area: copyright;
+  text-align: right;
 }
