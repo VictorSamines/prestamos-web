@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 //middleware
 app.use(express.json());
@@ -24,6 +24,12 @@ app.get("/Formulario", (req, res) => {
 app.get("/Prestamo_Registrado", (req, res) => {
   res.render("Prestamo_Registrado")
 })
+
+//pagina de 404 -Pagine not found
+app.get('*', (req,res)=>{
+  res.render('404')
+})
+
 
 //puerto que se va a ejecutar
 app.listen(PORT, () => {
