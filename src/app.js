@@ -21,7 +21,7 @@ app.set("views", __dirname + "/views");
 //PDF
 
 app.get("/pdf", (req, res) => {
-  let pdf = __dirname + "/helpers/pdf/Victor Samines.pdf";
+  let pdf = __dirname + "/helpers/pdf/prestamo.pdf";
   fs.access(pdf, fs.constants.F_OK, (err) => {
     console.log(`${pdf} ${err ? "no existe" : "existe"}`);
   });
