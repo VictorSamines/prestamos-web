@@ -1,0 +1,80 @@
+  <!DOCTYPE html>
+  <html lang="en">
+   <head>  
+   <meta charset="UTF-8">
+    <title>Registro de Calculo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  
+     <link rel="stylesheet" href="/styles/styles.css">
+     <link rel="stylesheet" href="/styles/formulario.css">
+     <link rel="stylesheet" href="/styles/normalize.css">
+    </head>
+
+  <body>
+     
+    <%- include('partials/header'); %>
+
+    <h2 id="title">Calculo de intereses de préstamo sobre saldos
+      <a  href="/Prestamo_Registrado" class="btn1" type="button" value ="Imprimir Reporte">Registros de Calculos</a>
+
+    </h2>
+    <p>Llene los datos para calcular los intereses de cada mes, según el plazo de su prestamo</p>
+  
+    <section class="form-register">
+           <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+      <input class="controls" type="number" name="telefono" id="telefono" placeholder="Ingrese su No telefonico">
+      <input class="controls" type="text" name="direccion" id="direccion" placeholder="Ingrese su Direccion">
+      <input class="controls" type="number" name="dpi" id="dpi" placeholder="Ingrese su DPI">
+      <input class="controls" type="number" name="monto" id="monto" placeholder="Ingrese el Monto">
+      <input class="controls" type="number" name="plazo" id="plazo" placeholder="Ingrese Plazo en Años">
+      <input class="controls" type="number" name="interes" id="interes" placeholder="Ingrese Interes">
+       <input class="botons" type="submit" value="Calcular Intereses">
+    </section>
+<div>
+  <div>
+<h2 id="title">Tabla de intereses
+  <a class="btn" type="button" value ="Imprimir Reporte">Descargar</a>
+</h2>
+
+</div>
+ <section>
+
+      <table>
+        
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Mes</th>
+          <th scope="col">Intereses</th>
+          <th scope="col">Amortización</th>
+          <th scope="col">Total</th>
+          <th scope="col">Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+      </table>
+ </section>
+    <%- include("partials/footer")  %>
+  </body>
+
+</html>
