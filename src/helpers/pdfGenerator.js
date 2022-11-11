@@ -1,23 +1,15 @@
-const createFile = () => {
-  console.log("Click hecho");
-  //   var docDefinition = {
-  //     content: [
-  //       {
-  //         layout: "lightHorizontalLines", // optional
-  //         table: {
-  //           // headers are automatically repeated if the table spans over multiple pages
-  //           // you can declare how many rows should be treated as headers
-  //           headerRows: 1,
-  //           widths: ["*", "auto", 100, "*"],
+const PdfPrinter = require("pdfmake");
+const fs = require("fs");
+const fonts = require("./fonts");
+const { clientePrestamosInfo } = require("./pdfContent");
 
-  //           body: [
-  //             ["First", "Second", "Third", "The last one"],
-  //             ["Value 1", "Value 2", "Value 3", "Value 4"],
-  //             [{ text: "Bold value", bold: true }, "Val 2", "Val 3", "Val 4"],
-  //           ],
-  //         },
-  //       },
-  //     ],
-  //   };
-  //   pdfMake.createPdf(docDefinition).open();
+const createFile = (docDefinition) => {
+  const printer = new PdfPrinter(fonts);
+  const pdfDoc = printer.createPdfKitDocument(docDefinition);
+  pdfDoc.pipe(
+    fs.createWriteStream(__dirname + `/pdf/${clientePrestamosInfo.nombre}.pdf`)
+  );
+  pdfDoc.end();
+  console.log(`PDF generado correctamente ${clientePrestamosInfo.nombre}.pdf`);
 };
+module.exports = createFile;

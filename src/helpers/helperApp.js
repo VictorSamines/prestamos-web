@@ -1,5 +1,5 @@
 //Archivo de ayuda
-let dataPdf = [
+let data = [
   {
     mes: { text: "MES", bold: true },
     intereses: { text: "INTERESES", bold: true },
@@ -10,7 +10,7 @@ let dataPdf = [
 ];
 //Data para la db
 let dataDB = [];
-//Data informacion para el PDF
+
 let info = [];
 
 // const monto = 100000;
@@ -78,7 +78,7 @@ const calcular = async (monto, intAnual, periodo) => {
 
   //Bucle para llenar los datos del pdf
   for (let i = 0; i < mesesArray.length; i++) {
-    dataPdf.push({
+    data.push({
       mes: mesesArray[i],
       intereses: interesesArray[i].toFixed(2),
       amortizacion: amortizacionArray[i].toFixed(2),
@@ -86,15 +86,13 @@ const calcular = async (monto, intAnual, periodo) => {
       saldo: resultadoSaldo[i].toFixed(2),
     });
   }
-  //Data para información del PDF
-
-  for (let i = 0; i < dataPdf.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     info.push([]);
-    info[i].push(dataPdf[i].mes);
-    info[i].push(dataPdf[i].intereses);
-    info[i].push(dataPdf[i].amortizacion);
-    info[i].push(dataPdf[i].total);
-    info[i].push(dataPdf[i].saldo);
+    info[i].push(data[i].mes);
+    info[i].push(data[i].intereses);
+    info[i].push(data[i].amortizacion);
+    info[i].push(data[i].total);
+    info[i].push(data[i].saldo);
   }
 
   //Bucle para llenar los datos para ingresar en la
@@ -108,4 +106,4 @@ const calcular = async (monto, intAnual, periodo) => {
     });
   }
 };
-module.exports = { dataPdf, dataDB, calcular, info };
+module.exports = { data, dataDB, calcular, info };

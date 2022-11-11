@@ -1,5 +1,5 @@
 const styles = require("./styles");
-const info = require("./fillData");
+const { info } = require("./helperApp");
 
 //Objeto Datos personales del solicitante
 const clientePrestamosInfo = {
@@ -12,7 +12,7 @@ const clientePrestamosInfo = {
   periodo: 0,
 };
 
-const llenarClientePrestamosInfo = (
+function llenarClientePrestamosInfo(
   nombre = "",
   direccion = "",
   telefono = 0,
@@ -20,7 +20,7 @@ const llenarClientePrestamosInfo = (
   monto = 0,
   interes = 0,
   periodo = 0
-) => {
+) {
   clientePrestamosInfo.nombre = nombre;
   clientePrestamosInfo.direccion = direccion;
   clientePrestamosInfo.telefono = telefono;
@@ -28,7 +28,7 @@ const llenarClientePrestamosInfo = (
   clientePrestamosInfo.monto = monto;
   clientePrestamosInfo.interes = interes;
   clientePrestamosInfo.periodo = periodo;
-};
+}
 
 //Contenido de la tabla la tabla
 const docDefinition = {
@@ -66,7 +66,6 @@ const docDefinition = {
   },
   styles: styles,
 };
-
 module.exports = {
   clientePrestamosInfo,
   docDefinition,
