@@ -1,1 +1,64 @@
-<!-- Index con ejs -->
+<!-- Index prueba -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style/info.css">
+  <link rel="stylesheet" href="/style/help.css">
+  <link rel="stylesheet" href="/style/normalize.css">
+  <title><%= titulo %></title>
+</head>
+</head>
+<body>
+  <%- include("template/header")  %>
+  <main>
+    <div class="wrapper">
+      <div class="main-content">
+        <div class="main-left-content">
+          <h1>Cálculo de Intereses de Préstamo Sobre Saldos</h1>
+          <p>Herramienta para realizar una estimación de los intereses que debe pagar según el plazo, monto o tasa de interés anual disponible</p>
+          <a href="#">Calcular préstamo</a>
+        </div>
+        <div class="main-right-content">
+          <img src="./images/prestamo-saldos.webp" alt="Foto préstamo" >
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="about">
+    <div class="wrapper">
+      <h2>¿En qué consiste un Préstamo sobre saldos?</h2>
+      <p>Consiste en que el valor de tu cuota mensual será diferente todos los meses durante la vigencia del préstamo, los intereses irán disminuyendo su porcentaje a medida que se vayan pagando las cuotas, hasta llegar a 0 e el último pago.</p>
+      <div class="about-content">
+        <div class="about-content-item">
+          <img src="./images/icon-online.svg" alt="">
+          <h3>Principal Característica</h3>
+          <p>La principal característica es que la cuota mensual será diferente todos los meses durante la vigencia de tu préstamo</p>
+        </div>
+        <div class="about-content-item">
+          <img src="./images/icon-budgeting.svg" alt="">
+          <h3>Cálculo</h3>
+          <p>Se calcula dividiendo el capital del préstamo entre el número total de meses según el plazo estipulado.</p>
+        </div>
+        <div class="about-content-item">
+          <img src="./images/icon-onboarding.svg" alt="Icon onboarding">
+          <h3>Valor de abono</h3>
+          <p>El valor que abonarás al capital en cada cuota mensual será siempre el mismo.</p>
+        </div>
+        <div class="about-content-item">
+          <img src="./images/icon-api.svg" alt="">
+          <h3>Intereses</h3>
+          <p>Los intereses por pagar varían en cada cuota, por esa razón las cuotas iniciales son mayores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%- include("template/footer")  %>
+</body>
+</html>
