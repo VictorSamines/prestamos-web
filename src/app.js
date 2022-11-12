@@ -20,22 +20,22 @@ app.set("views", __dirname + "/views");
 
 //PDF
 
-app.get("/pdf", (req, res) => {
-  let pdf = __dirname + "/helpers/pdf/prestamo.pdf";
-  fs.access(pdf, fs.constants.F_OK, (err) => {
-    console.log(`${pdf} ${err ? "no existe" : "existe"}`);
-  });
+// app.get("/pdf", (req, res) => {
+//   let pdf = __dirname + "/helpers/pdf/prestamo.pdf";
+//   fs.access(pdf, fs.constants.F_OK, (err) => {
+//     console.log(`${pdf} ${err ? "no existe" : "existe"}`);
+//   });
 
-  fs.readFile(pdf, function (err, data) {
-    if (err) {
-      res.writeHead(404, { "Content-Type": "text/plane" });
-      return res.end("404 not found");
-    }
-    res.writeHead(200, { Content_Type: "application/pdf" });
-    res.write(data);
-    return res.end();
-  });
-});
+//   fs.readFile(pdf, function (err, data) {
+//     if (err) {
+//       res.writeHead(404, { "Content-Type": "text/plane" });
+//       return res.end("404 not found");
+//     }
+//     res.writeHead(200, { "Content-Type": "application/pdf" });
+//     res.write(data);
+//     return res.end();
+//   });
+// });
 
 app.use(express.static(__dirname + "/public"));
 
@@ -70,17 +70,17 @@ app.post("/cliente-prestamo", async (req, res, next) => {
   let interesFront = parseInt(interes, 10) / 100;
   let periodoFront = parseInt(periodo, 10);
   calcular(montoFront, interesFront, periodoFront);
-  llenarClientePrestamosInfo(
-    nombre,
-    direccion,
-    telefono,
-    dpi,
-    monto,
-    interes,
-    periodo
-  );
-  createFile(docDefinition);
-  // console.log(info);
+  // llenarClientePrestamosInfo(
+  //   nombre,
+  //   direccion,
+  //   telefono,
+  //   dpi,
+  //   monto,
+  //   interes,
+  //   periodo
+  // );
+  // createFile(docDefinition);
+  // console.log(dataDB);
 
   try {
     const clientePrestamoData = ClientePrestamos(req.body);
