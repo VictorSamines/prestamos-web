@@ -6,6 +6,10 @@
   --font-p: hsl(233, 8%, 62%);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1,h2,h3 {
   font-family: 'Roboto', sans-serif;
 }

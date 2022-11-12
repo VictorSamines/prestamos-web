@@ -55,6 +55,23 @@ p {
   padding: 2em 0 2em 1.5em;
 }
 
+.help-bottom-faqs .btn-calcular {
+  display: block;
+  width: 50%;
+  padding: 1em;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 1em;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.help-bottom-faqs .btn-calcular:hover {
+  background-color: white;
+  color: var(--blue);
+}
+
 .help-bottom-faqs h2 {
   font-size: 1.8em;
 }
