@@ -1,0 +1,93 @@
+<!-- Index con ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.6/pdfmake.min.js"
+        integrity="sha512-7BzHjLXs8xehClrkJEtJtAwXxcbLast87k+XekuItHxrMr/v6POWkoKS2/8CU6DHdIjY+A4NwvsBQ8PxoRH7xQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.6/vfs_fonts.js"
+        integrity="sha512-pAoMgvsSBQTe8P3og+SAnjILwnti03Kz92V3Mxm0WOtHuA482QeldNM5wEdnKwjOnQ/X11IM6Dn3nbmvOz365g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <h1>
+        <%= titulo%>
+    </h1>
+    <form action="/cliente-prestamo" method="post">
+        <h3>Información del Solicitante</h3>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" autocomplete="off">
+        </div>
+        <div>
+            <label for="direccion">Direccion</label>
+            <input type="text" name="direccion" autocomplete="off">
+        </div>
+        <div>
+            <label for="telefono">Telefono</label>
+            <input type="number" name="telefono" autocomplete="off">
+        </div>
+        <div>
+            <label for="dpi">DPI</label>
+            <input type="number" name="dpi" autocomplete="off">
+        </div>
+        <h3>Información del Prestamo</h3>
+        <div>
+            <label for="monto">Monto</label>
+            <input type="number" name="monto" autocomplete="off">
+        </div>
+        <div>
+            <label for="interes">Interes anual</label>
+            <input type="number" name="interes" autocomplete="off">
+            <label for="">%</label>
+        </div>
+        <div>
+            <label for="periodo">Periodo</label>
+            <input type="number" name="periodo" autocomplete="off">
+        </div>
+        <button>Calcular</button>
+    </form>
+    <a href="/pdf">Ver PDF</a>
+    <table id="tabla">
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Intereses</th>
+                <th>Amortizacion</th>
+                <th>Total</th>
+                <th>Saldo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < dataDB.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= dataDB[i].mes%>
+                    </td>
+                    <td>
+                        <%= dataDB[i].intereses%>
+                    </td>
+                    <td>
+                        <%= dataDB[i].amortizacion%>
+                    </td>
+                    <td>
+                        <%= dataDB[i].total%>
+                    </td>
+                    <td>
+                        <%= dataDB[i].saldo%>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+
+    </table>
+</body>
+
+</html>
